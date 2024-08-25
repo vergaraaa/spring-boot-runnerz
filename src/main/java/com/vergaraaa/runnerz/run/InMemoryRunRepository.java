@@ -40,7 +40,10 @@ public class InMemoryRunRepository {
     Optional<Run> findById(Integer id) {
         return runs.stream()
                 .filter(run -> run.id() == id)
-                .findFirst();
+                .findFirst()
+                .or(() -> {
+                    throw new RunNotFoundException();
+                });
     }
 
     void create(Run run) {
