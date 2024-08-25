@@ -22,7 +22,7 @@ public class InMemoryRunRepository {
                 LocalDateTime.now(),
                 LocalDateTime.now().plus(30, ChronoUnit.MINUTES),
                 5,
-                Location.OUTDOOR));
+                Location.OUTDOOR, 1));
 
         runs.add(new Run(
                 2,
@@ -30,7 +30,7 @@ public class InMemoryRunRepository {
                 LocalDateTime.now(),
                 LocalDateTime.now().plus(60, ChronoUnit.MINUTES),
                 6,
-                Location.INDOOR));
+                Location.INDOOR, 1));
     }
 
     List<Run> findAll() {
